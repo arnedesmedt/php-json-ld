@@ -24,7 +24,7 @@ class Node extends ArrayValue
                 continue;
             }
 
-            if (strpos('@', (string) $key) === 0) {
+            if (strpos((string) $key, '@') === 0) {
                 if (in_array((string) $key, ['@id', '@type']) && ! $value->value() instanceof Iri) {
                     throw NodeException::valueIsNotAnIri((string) $key);
                 }

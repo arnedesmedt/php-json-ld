@@ -24,7 +24,7 @@ class Iri extends StringValue
      */
     public static function fromStringWithPrefix(string $value)
     {
-        if (strpos(':', $value) === false) {
+        if (strpos($value, ':') === false) {
             throw IriException::noContextString($value);
         }
 
